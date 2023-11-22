@@ -1,3 +1,12 @@
+/**
+ * Node.js tabanlı kullanıcı giriş ve doğrulama scripti.
+ * Bu script, kullanıcıdan TC kimlik numarası ve şifresini alarak,
+ * bir giriş işlemi gerçekleştirir. Kullanıcının kimlik doğrulaması için,
+ * SMS kodu ile ikinci bir adım gereklidir.
+ *
+ * @module MakeSession
+ */
+
 const axios = require("axios");
 const { encrypt } = require("./utils/crypto");
 const readline = require("readline");
@@ -9,6 +18,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+// Kullanıcıdan TC kimlik numarası ve şifre alınır.
 let username = "";
 let password = "";
 let smsCode = "";
